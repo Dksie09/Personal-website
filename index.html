@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dakshi Goel</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+  <link rel="icon" href="faviconn.ico">
+</head>
+
+<body>
+  <div class="top-container">
+    <img class="top-cloud object" src="images/cloud.png" alt="cloud" data-value="-5">
+    <div class="title-text object" data-value="5">
+      <h1><b>I'm Dakshi.</b></h1>
+      <h2 class="caption">a <span class="pro">pro</span>grammer.</h2>
+    </div>
+    <img class="bottom-cloud object" src="images/cloud.png" alt="cloud" data-value="-5">
+    <img class="mountain object" src="images/mountain.png" alt="mountain-img" data-value="5">
+  </div>
+
+  <div class="middle-container">
+    <div class="profile">
+      <img src="images/avatar.jpg" alt="dakshi-profile-img" class="avatar">
+      <h2>Hello.</h2>
+      <p class="intro">An underdaguate student, currently a programmer & a developer.❤️</p>
+    </div>
+    <hr>
+    <h2>My Projects</h2>
+          <section>
+            
+        
+            <div class="container">
+              <div class="item" id="1">
+                <img src="images/Completed steps-amico.png" alt="" class="proj-img">
+                <div class="text">
+                  <h3>HostelEz</h4>
+                  <p>An online complaint-management portal.</p>
+                </div>
+                <div class="button">Learn More</div>
+              </div>
+        
+              <div class="item" id="2">
+                <img src="images/holo-png.png" alt="" class="proj-img" >
+                <div class="text">
+                  <h3>Holostry</h4>
+                  <p>Solving the problem of visualization in learning.</p>
+                </div>
+                <div class="button">Learn More</div>
+              </div>
+        
+              <div class="item" id="3">
+                <img src="images\404 Error-rafiki.png" alt="" class="proj-img">
+                <div class="text">
+                    <h3>PROJECT 3</h4>
+                  <p>Short Description</p>
+                  </div>
+                  <div class="button">Learn More</div>
+              </div>
+        
+              <div class="item" id="4">
+                <img src="images\404 Error-rafiki.png" alt="" class="proj-img">
+                <div class="text">
+                  <h3>PROJECT 4</h4>
+                  <p>Short Description</p>
+                </div>
+                <div class="button">Learn More</div>
+              </div>
+        
+        
+          <!-- Modal -->
+          <div id="preview" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <img id="img" src="">
+              <div id="details">
+                <h3 id="title"></h3>
+                <p id="info">Some text</p>
+                <div class="button" id="live">View</div>
+                  <i class="fab fa-github-square" id="github"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        </div>
+      </div>
+      <hr>
+<!-- --------------------------------------------------------------------------------- -->
+<!-- <div class="end-container">
+  
+  </div>
+  <hr> -->
+<!-- --------------------------------------------------------------------------------- -->
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>If you love food as much as I do.</h3>
+      <a class="btn" href="mailto:dakshiegoel@gmail.com">CONTACT ME</a>
+      <p class="contact-message">Feel free to message me directly if you have any feedback, I'd love to hear from you.</p>
+      
+    </div>
+  </div>
+
+
+  <div class="bottom-container">
+    <a class="footer-link" href="https://www.linkedin.com/in/dakshi-goel/">LinkedIn</a>
+    <a class="footer-link" href="https://twitter.com/EnanoMralp?t=W6rMNSVbSS8QtFYpnRy6jA&s=08">Twitter</a>
+    <a class="footer-link" href="https://dksie09.github.io/CV/">Website</a>
+    <p class="copyright">©2022 Dakshi goel</p>
+  </div>
+
+  <script>
+    document.addEventListener("mousemove",parallax);
+    function parallax(e){
+      document.querySelectorAll(".object").forEach(function(move){
+        var moving_value = move.getAttribute("data-value");
+        var x = (e.clientX * moving_value / 250);
+        var y = (e.clientY * moving_value / 250);
+
+        move.style.transform = "translateX(" + x + "px) translateY(" + y+ "px)";
+      });
+
+      
+    }
+
+    var modalInfo = {
+    1: {
+      title: "HostelEz <font color='black' size=1px>(Student service)</font>",
+      info: "Aims at making hostel life easy by managing hostel-related complaints in an effective way.<br> <font color='grey'><b>Skills:</b> Java</font>",
+      link: "https://github.com/Dksie09/Hostelez",
+      github: "https://github.com/Dksie09/Hostelez"
+    },
+    2: {
+      title: "Holostry <font color='black' size=1px><b>(A 24-hour Hackathon Submission)</b></font>",
+      info: "Provides the user with a library of Carbon Compound Holographic gifs.<br> <font color='grey'><b>Skills:</b> Dart, Flutter</font>",
+      link: "https://github.com/Dksie09/Holostry",
+      github: "https://github.com/Dksie09/Holostry"
+    },
+    // 3: {
+    //   title: "Project 3",
+    //   info: "...",
+    //   link: "#",
+    //   github: "#"
+    // },
+    // 4: {
+    //   title: "Project 4",
+    //   info: "....",
+    //   link: "#",
+    //   github: "#"
+    // },
+  };
+  
+  // Get the modal
+  var modal = document.getElementById('preview');
+  
+  // button that opens the modal
+  var btn = document.getElementsByClassName("button");
+  
+  // <span> that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // open modal 
+  for(let i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", function() {
+      var project = btn[i].parentElement;
+      openModal(project);
+    })
+  };
+  
+  function openModal(project){
+    var id = project.id;
+    var img = project.getElementsByTagName("img")[0].src;
+    fillOut(id, img);
+    modal.style.display = "block";
+    document.getElementsByClassName("modal-content")[0].classList.add("scale");
+  }
+  
+  function fillOut(id, img){
+    document.getElementById("title").innerHTML = modalInfo[id].title;
+    document.getElementById("info").innerHTML = modalInfo[id].info;
+    document.getElementById("img").src = img;
+    document.getElementById("live").onclick = function(){
+      window.open(modalInfo[id].link,'_blank');
+    }
+    document.getElementById("github").onclick = function(){
+      window.open(modalInfo[id].github,'_blank');
+    }
+  }
+  
+  // close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+  
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+function afternoonTime(){
+    document.querySelector("h1").style.color="#bf9e66"
+    document.querySelector(".caption").style.color="#bf9e66"
+    document.querySelector(".top-container").style.backgroundColor="#f9f2e4"}
+
+function eveningTime(){
+    document.querySelector("h1").style.color="#d3cfe2"
+    document.querySelector(".caption").style.color="#d3cfe2"
+    document.querySelector(".top-container").style.backgroundColor="#b18dea"}
+// #ece4f9    3a315d
+  document.querySelector(".top-container").addEventListener("contextmenu",afternoonTime)
+
+  </script>
+</body>
+
+</html>
